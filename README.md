@@ -1,4 +1,4 @@
-# ftag
+# taglit
 
 This is similar to [what's being planned for a future PEP](https://github.com/jimbaker/tagstr/blob/main/pep.rst).
 It uses some `ast` magic to automatically replace any **uppercase** f-strings (`F'...'`) with behavior similar to what's described in the PEP.
@@ -6,7 +6,7 @@ It uses some `ast` magic to automatically replace any **uppercase** f-strings (`
 Here's an example:
 
 ```python
-from ftag import tagstr, html
+from taglit import taglit, html
 
 def is_logged_in() -> bool:
     return False
@@ -14,7 +14,7 @@ def is_logged_in() -> bool:
 animal_images = ["cat.png", "dog.png", "cow.png"]
 status_image = "logged-in.png" if is_logged_in() else "logged-out.png"
 
-@ftag(html)
+@taglit(html)
 def demo():
     return F'''
         <div>

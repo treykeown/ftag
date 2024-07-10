@@ -8,7 +8,7 @@ from typing import Callable, Any, Iterable
 from ._util import line_col_to_index
 
 
-def ftag[C: Callable](transformer: Callable[..., str], *, target: str = "F") -> C:
+def taglit[C: Callable](transformer: Callable[..., str], *, target: str = "F") -> C:
     def wrap(wrap_func: Callable) -> Callable:
         return _transform_function(target, wrap_func, transformer)
 
@@ -38,7 +38,7 @@ class _StripTagstrDecorator(ast.NodeTransformer):
         self.transformer = transformer
 
     def visit_FunctionDef(self, node):
-        node.decorator_list = [d for d in node.decorator_list if not (isinstance(d, ast.Call) and d.func.id == ftag.__name__)]
+        node.decorator_list = [d for d in node.decorator_list if not (isinstance(d, ast.Call) and d.func.id == taglit.__name__)]
         return node
 
 

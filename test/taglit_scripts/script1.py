@@ -1,4 +1,4 @@
-from ftag import ftag, html
+from taglit import taglit, html
 
 def is_logged_in() -> bool:
     return False
@@ -6,7 +6,7 @@ def is_logged_in() -> bool:
 animal_images = ["cat.png", "dog.png", "cow.png"]
 status_image = "logged-in.png" if is_logged_in() else "logged-out.png"
 
-@ftag(html, target='f')
+@taglit(html, target='f')
 def demo():
     return f'''
         <div>

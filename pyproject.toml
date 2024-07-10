@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "ftag"
+name = "taglit"
 version = "0.1.0"
 description = ""
 authors = ["treykeown <2755914+treykeown@users.noreply.github.com>"]
